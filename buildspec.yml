@@ -1,0 +1,30 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: latest
+    commands:
+      - echo Installing dependencies...
+      - npm install
+  pre_build:
+    commands:
+      - echo We are in the pre build phase
+  build:
+    commands:
+      - echo Build started
+      - grep -Fq "Training" public/index.html
+      #- npm run build
+  post_build:
+    commands:
+      - echo Build completed
+      #- npm test
+
+artifacts:
+  files:
+    - '**/*'
+  discard-paths: yes
+
+cache:
+  paths:
+    - 'node_modules/**/*'
