@@ -1,0 +1,13 @@
+{
+  "name": "static-site",
+  "version": "1.0.0",
+  "description": "Static website deployed on AWS Elastic Beanstalk",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}
+
